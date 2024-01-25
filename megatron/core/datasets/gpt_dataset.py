@@ -545,7 +545,7 @@ def _get_ltor_masks_and_position_ids(
     if reset_position_ids or reset_attention_mask:
 
         # Find indecies where EOD token is.
-        eod_index = position_ids[data[b] == eod_token]
+        eod_index = position_ids[data == eod_token]
         # Detach indecies from positions if going to modify positions.
         if reset_position_ids:
             eod_index = eod_index.clone()
